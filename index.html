@@ -1,12 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <h1>Todo List Project</h1>
+    </header>
+    <section class="sidebar">
+      <div class="sidebar__tabs-section d-flex wrap">
+        <div class="search-bar">
+          <input type="search" name="search" placeholder="Search" />
+        </div>
+        <div class="list-tab">
+          <i></i>
+          <h3>Today</h3>
+        </div>
+        <div class="list-tab">
+          <i></i>
+          <h3>This Week</h3>
+        </div>
+        <div class="list-tab">
+          <i></i>
+          <h3>Completed</h3>
+        </div>
+        <div class="list-tab">
+          <i></i>
+          <h3>All</h3>
+        </div>
+      </div>
+      <hr />
+      <div class="sidebar__list-section">
+        <h2>My lists</h2>
+        <ul class="all-lists">
+          <li>My list</li>
+          <li>My list</li>
+          <li>My list</li>
+        </ul>
+        <form class="d-flex">
+          <input
+            type="text"
+            name="add-list"
+            class="add-list"
+            placeholder="New list"
+          />
+          <button class="sidebar__add-list-btn">+</button>
+        </form>
+      </div>
+    </section>
+    <section
+      class="main-section d-flex flex flex-direction-column space-between"
+    >
+      <div class="main-title">
+        <h2>Today</h2>
+        <p>3 remaining tasks</p>
+      </div>
+      <div class="tasks">
+        <div class="task">
+          <input class="checkbox" type="checkbox" name="task-1" id="task-1" />
+          <label for="task-1">I have to do something</label>
+        </div>
+
+        <!-- end task 1 -->
+
+        <div class="task">
+          <input class="checkbox" type="checkbox" name="task-2" id="task-2" />
+          <label for="task-2">I have to do something</label>
+        </div>
+
+        <!-- end task 2 -->
+
+        <div class="task">
+          <input class="checkbox" type="checkbox" name="task-3" id="task-3" />
+          <label for="task-3">I have to do something</label>
+        </div>
+
+        <!-- end task 3 -->
+      </div>
+      <div class="new-task">
+        <form class="d-flex">
+          <input
+            type="text"
+            name="add-list"
+            class="add-list"
+            id="new-task"
+            placeholder="New task"
+          />
+          <button class="sidebar__add-list-btn">+</button>
+        </form>
+      </div>
+      <div class="complete-buttons d-flex space-between">
+        <button>Delete completed</button>
+        <button>Delete list</button>
+      </div>
+    </section>
+    <footer></footer>
+  </body>
 </html>

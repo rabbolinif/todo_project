@@ -1,0 +1,167 @@
+/* General */
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background: rgb(38, 104, 226);
+  font-size: 1.2rem;
+  font-family: "Work Sans", sans-serif;
+}
+
+/* Grid */
+
+body {
+  display: grid;
+  grid-template-columns: 1fr minmax(200px, 400px) minmax(300px, 600px) 1fr;
+  grid-template-areas:
+    "header header header header"
+    "..... sidebar main   ....."
+    "footer footer footer footer";
+  gap: 100px;
+}
+header {
+  grid-area: header;
+  text-align: center;
+  font-size: xx-large;
+  color: azure;
+  margin-bottom: 0;
+}
+.sidebar {
+  grid-area: sidebar;
+}
+.main-section {
+  grid-area: main;
+  background-color: #e4e4e4;
+}
+footer {
+  grid-area: footer;
+  background-color: #e4e4e4;
+}
+/* Flex properties */
+.d-flex {
+  display: flex;
+}
+.flex-direction-column {
+  flex-direction: column;
+}
+.space-between {
+  justify-content: space-between;
+}
+.wrap {
+  flex-wrap: wrap;
+}
+/* Header */
+
+/* Sidebar */
+
+.sidebar {
+  width: 400px;
+  background: rgb(38, 104, 226);
+  color: azure;
+}
+.sidebar .list-tab {
+  flex: 1 150px;
+  padding: 1rem;
+  margin: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+}
+.sidebar .list-tab:hover {
+  color: rgb(240, 255, 255, 0.7);
+  cursor: pointer;
+}
+.sidebar__list-section {
+  padding: 1rem;
+}
+.search-bar {
+  flex: 0 400px;
+  background-color: inherit;
+  padding: 1rem;
+}
+.search-bar input {
+  width: 375px;
+  height: 40px;
+  font-size: 32px;
+  background: transparent;
+}
+.all-lists {
+  list-style: none;
+  padding-left: 0;
+}
+.all-lists li {
+  padding-left: 0.5rem;
+  margin-left: 0;
+  font-weight: 300;
+}
+.all-lists li:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+.sidebar__add-list-btn {
+  order: -1;
+  background: transparent;
+  color: inherit;
+  font-weight: 900;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.add-list {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  border-bottom: 1px solid currentColor;
+  outline: none;
+  font-size: inherit;
+}
+
+/* Main-section */
+
+.main-section {
+}
+.main-section h2 {
+  font-size: 48px;
+  margin-top: 0.5rem;
+  margin-left: 1.5rem;
+}
+.main-title {
+  flex-grow: 0;
+  background: #ccc;
+}
+.main-title h2 {
+  background-color: #ccc;
+}
+.main-title p {
+  opacity: 0.6;
+  margin-left: 1.5rem;
+}
+.checkbox {
+  height: 1.25rem;
+  width: 1.25rem;
+  cursor: pointer;
+}
+.tasks {
+  flex-grow: 3;
+  padding: 1rem 2rem;
+  font-size: x-large;
+}
+.task {
+  margin-bottom: 1rem;
+}
+.new-task {
+  padding: 1rem 2rem;
+}
+#new-task {
+  font-size: x-large;
+}
+.complete-buttons button {
+  background: transparent;
+  color: rgb(38, 104, 226);
+  font-size: 1.25rem;
+  border: none;
+  cursor: pointer;
+  opacity: 0.6;
+}
+.complete-buttons button:hover {
+  opacity: 1;
+}
