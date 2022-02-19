@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link href="stelios_style.css" rel="stylesheet" />
+    <script defer src="stelios_app.js"></script>
   </head>
   <body>
     <header>
@@ -43,12 +44,13 @@
         </ul>
         <form class="d-flex">
           <input
+            data-add-list-name
             type="text"
             name="add-list"
             class="add-list"
             placeholder="New list"
           />
-          <button class="sidebar__add-list-btn">+</button>
+          <button class="sidebar__add-list-btn" data-add-list-btn>+</button>
         </form>
       </div>
     </section>
