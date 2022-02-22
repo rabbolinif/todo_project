@@ -88,6 +88,14 @@ footer {
   list-style: none;
   padding-left: 0;
 }
+.list-name.active-list {
+  font-weight: 900;
+  color: white;
+}
+.list-name.active-list:hover {
+  opacity: 1;
+  cursor: pointer;
+}
 .all-lists li {
   padding-left: 0.5rem;
   margin-left: 0;
@@ -101,7 +109,7 @@ footer {
   order: -1;
   background: transparent;
   color: inherit;
-  font-weight: 900;
+  font-weight: 700;
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
@@ -146,11 +154,21 @@ footer {
 .task {
   margin-bottom: 1rem;
 }
+.task-btn {
+  order: -1;
+  background: transparent;
+  color: inherit;
+  font-weight: 700;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
 .new-task {
   padding: 1rem 2rem;
 }
 #new-task {
   font-size: x-large;
+  order: 2;
 }
 .complete-buttons button {
   background: transparent;

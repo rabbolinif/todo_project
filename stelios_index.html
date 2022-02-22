@@ -36,13 +36,13 @@
       </div>
       <hr />
       <div class="sidebar__list-section">
-        <h2>My lists</h2>
+        <h2 class="active-list">My lists</h2>
         <ul class="all-lists">
+          <!-- <li class="active-list">My list</li>
           <li>My list</li>
-          <li>My list</li>
-          <li>My list</li>
+          <li>My list</li> -->
         </ul>
-        <form class="d-flex">
+        <form class="d-flex" data-add-list-form>
           <input
             data-add-list-name
             type="text"
@@ -56,10 +56,11 @@
     </section>
     <section
       class="main-section d-flex flex flex-direction-column space-between"
+      data-list-display-container
     >
       <div class="main-title">
-        <h2>Today</h2>
-        <p>3 remaining tasks</p>
+        <h2 data-list-title>Today</h2>
+        <p data-task-count>3 remaining tasks</p>
       </div>
       <div class="tasks">
         <div class="task">
@@ -92,12 +93,12 @@
             id="new-task"
             placeholder="New task"
           />
-          <button class="sidebar__add-list-btn">+</button>
+          <button class="task-btn" data-add-task-btn>+</button>
         </form>
       </div>
       <div class="complete-buttons d-flex space-between">
         <button>Delete completed</button>
-        <button>Delete list</button>
+        <button data-delete-list-btn>Delete list</button>
       </div>
     </section>
     <!-- If we deicide we need footer  -->
