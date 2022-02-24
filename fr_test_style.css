@@ -1,0 +1,250 @@
+/* General */
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background: rgb(38, 104, 226);
+  font-size: 1.2rem;
+  font-family: "Work Sans", sans-serif;
+}
+
+/* Grid */
+
+body {
+  display: grid;
+  grid-template-columns: 1fr minmax(200px, 400px) minmax(300px, 600px) 1fr;
+  grid-template-areas:
+    "header header header header"
+    "..... sidebar main   ....."
+    "footer footer footer footer";
+  gap: 100px;
+}
+header {
+  grid-area: header;
+  text-align: center;
+  font-size: xx-large;
+  color: azure;
+  margin-bottom: 0;
+}
+.sidebar {
+  grid-area: sidebar;
+}
+.main-section {
+  grid-area: main;
+  background-color: #e4e4e4;
+}
+footer {
+  grid-area: footer;
+  background-color: #e4e4e4;
+}
+/* Flex properties */
+.d-flex {
+  display: flex;
+  align-items: center;
+}
+.flex-direction-column {
+  flex-direction: column;
+}
+.space-between {
+  justify-content: space-between;
+}
+.wrap {
+  flex-wrap: wrap;
+}
+/* Header */
+
+/* Sidebar */
+
+.sidebar {
+  width: 400px;
+  background: rgb(38, 104, 226);
+  color: azure;
+}
+.sidebar .list-tab {
+  flex: 1 150px;
+  padding: 1rem;
+  margin: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+}
+.sidebar .list-tab:hover {
+  color: rgb(240, 255, 255, 0.7);
+  cursor: pointer;
+}
+.sidebar__list-section {
+  padding: 1rem;
+}
+.search-bar {
+  flex: 0 400px;
+  background-color: inherit;
+  padding: 1rem;
+}
+.search-bar input {
+  width: 375px;
+  height: 40px;
+  font-size: 32px;
+  background: transparent;
+}
+.all-lists {
+  list-style: none;
+  padding-left: 0;
+}
+.list-name.active-list {
+  font-weight: 900;
+  color: white;
+}
+.list-name.active-list:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+.all-lists li {
+  padding-left: 0.5rem;
+  margin-left: 0;
+  font-weight: 300;
+}
+.all-lists li:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+.sidebar__add-list-btn {
+  order: -1;
+  background: transparent;
+  color: inherit;
+  font-weight: 700;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.add-list {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  border-bottom: 1px solid currentColor;
+  outline: none;
+  font-size: inherit;
+}
+
+/* Main-section */
+
+.main-section h2 {
+  font-size: 48px;
+  margin-top: 0.5rem;
+  margin-left: 1.5rem;
+}
+.main-title {
+  flex-grow: 0;
+  /*background: #ccc;*/
+}
+.main-title h2 {
+  text-shadow: grey 2px 5px;
+  /*background-color: #ccc;*/
+}
+
+.main-title p {
+  opacity: 0.6;
+  margin-left: 1.5rem;
+}
+.checkbox {
+  height: 1.25rem;
+  width: 1.25rem;
+  cursor: pointer;
+}
+.tasks {
+  flex-grow: 3;
+  padding: 1rem 2rem;
+  font-size: x-large;
+}
+.task {
+  margin-bottom: 1rem;
+}
+.task-btn {
+  order: -1;
+  background: transparent;
+  color: inherit;
+  font-weight: 700;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.new-task {
+  padding: 1rem 2rem;
+}
+#new-task {
+  font-size: x-large;
+  order: 2;
+}
+.complete-buttons button {
+  background: transparent;
+  color: rgb(38, 104, 226);
+  font-size: 1.25rem;
+  border: none;
+  cursor: pointer;
+  opacity: 0.6;
+}
+.complete-buttons button:hover {
+  opacity: 1;
+}
+
+/* start fr test */
+
+.todo-list {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.todo-item {
+  margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todo-item span {
+  flex-grow: 1;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 22px;
+}
+
+.done span {
+  text-decoration: line-through;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.tick {
+  width: 30px;
+  height: 30px;
+  border: 3px solid #333;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.tick::before {
+  content: '✓';
+  font-size: 20px;
+  display: none;
+}
+
+.done .tick::before {
+  display: inline;
+}
+
+.delete-todo {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+}
+
+.delete-todo svg {
+  width: 30px;
+  height: 30px;
+  pointer-events: none;
+}
