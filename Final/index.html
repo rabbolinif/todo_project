@@ -4,85 +4,90 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link href="fr_test_style.css" rel="stylesheet" />
+    <title>To Do List</title>
+
+    <!-- Google Fonts-->
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+    />
+
+    <!-- Stylesheet-->
+
+    <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <header>
-      <h1>Todo List Project</h1>
-    </header>
-    <section class="sidebar">
-      <div class="sidebar__tabs-section d-flex wrap">
-        <div class="search-bar">
-          <input type="search" name="search" placeholder="Search" />
-        </div>
-        <div class="list-tab">
-          <i></i>
-          <h3>Today</h3>
-        </div>
-        <div class="list-tab">
-          <i></i>
-          <h3>This Week</h3>
-        </div>
-        <div class="list-tab">
-          <i></i>
-          <h3>Completed</h3>
-        </div>
-        <div class="list-tab">
-          <i></i>
-          <h3>All</h3>
-        </div>
-      </div>
-      <hr />
-      <div class="sidebar__list-section">
-        <h2 class="active-list">My lists</h2>
-        <ul class="all-lists">
-          <!-- <li class="active-list">My list</li>
-          <li>My list</li>
-          <li>My list</li> -->
+      <h1>To Do List</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Account</a></li>
         </ul>
-        <form class="d-flex" data-add-list-form>
+      </nav>
+    </header>
+
+    <main>
+      <section class="sidebar">
+        <div class="buttons">
           <input
-            data-add-list-name
-            type="text"
-            name="add-list"
-            class="add-list"
-            placeholder="New list"
+            type="search"
+            name="search"
+            placeholder="Search"
+            class="search-bar"
           />
-          <button class="sidebar__add-list-btn" data-add-list-btn>+</button>
-        </form>
-      </div>
-    </section>
-    <section
-      class="main-section d-flex flex flex-direction-column space-between"
-      data-list-display-container
-    >
-      <div class="main-title">
-        <h2 data-list-title>Today</h2>
+          <div class="h3">
+            <h3 id="completed">Completed</h3>
+            <h3 id="open">Open Tasks</h3>
+            <h3 id="all">All</h3>
+          </div>
+        </div>
+        <hr />
+        <div class="lists">
+          <h2 class="active-list">My lists</h2>
+          <ul class="my-lists"></ul>
+          <form data-add-list-form>
+            <button data-add-list-btn>+</button>
+            <input
+              type="text"
+              name="add-list"
+              placeholder="New list"
+              class="add"
+              data-add-list-name
+            />
+          </form>
+        </div>
+      </section>
+      <section class="main-part" data-list-display-container>
+        <h2 data-list-title>What will you do today?</h2>
         <!-- <p data-task-count>3 remaining tasks</p> -->
-      </div>
-      <div class="tasks">
-        <ul class="todo-list js-todo-list"></ul>
-      </div>
-      <div class="new-task">
-        <form class="d-flex js-form">
+        <ul class="task-list"></ul>
+        <form class="new-task">
+          <button class="todo-button" data-add-task-btn>+</button>
           <input
             type="text"
-            aria-label="Enter a new todo item"
             name="add-list"
-            class="js-todo-input"
-            id="new-task"
-            placeholder="Enter a new task"
+            placeholder="New task"
+            class="add to-do"
           />
         </form>
-      </div>
-      <!-- <div class="complete-buttons d-flex space-between">
-        <button>Delete completed</button>
-        <button data-delete-list-btn>Delete list</button>
-      </div> -->
-    </section>
-    <!-- If we deicide we need footer  -->
-    <footer></footer>
+        <br />
+        <button class="delete-list" data-delete-list-btn>Delete list</button>
+      </section>
+    </main>
+
+    <footer>
+      <nav>
+        <ul class="footer">
+          <li><a href="#">Download</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </footer>
+
+    <!-- JavaScript -->
 
     <svg>
       <defs>
@@ -137,6 +142,6 @@
       </defs>
     </svg>
 
-    <script defer src="fr_test_script_js"></script>
+    <script defer src="app.js"></script>
   </body>
 </html>
