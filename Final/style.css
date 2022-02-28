@@ -231,8 +231,11 @@ main {
 }
 
 .done {
-  text-decoration: line-through;
   opacity: 0.6;
+}
+
+.done .todo-item {
+  text-decoration: line-through;
 }
 
 /* Footer */
@@ -245,16 +248,14 @@ main {
   margin-top: 45px;
 }
 
-/* Francois JavaScript styling
-
 .todo-item {
-  margin-bottom: 10px;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   color: #808080;
+  border: none;
+  text-align: center;
 }
+
+/*
 
 .todo-item span {
   flex-grow: 1;

@@ -55,14 +55,21 @@ function addToDo(event) {
   completedButton.innerHTML = "";
   completedButton.classList.add("complete-btn");
   toDoDiv.appendChild(completedButton);
-  // Create li
-  const newToDo = document.createElement("li");
-  newToDo.innerText = toDoInput.value;
+  // Create input
+  const newToDo = document.createElement("input");
+  newToDo.value = toDoInput.value;
   newToDo.classList.add("todo-item");
+  newToDo.type = "text";
+  newToDo.setAttribute("readonly", "readonly");
   toDoDiv.appendChild(newToDo);
-  // Add to do to local storage
+  // Add to local storage
   saveLocalToDos(toDoInput.value);
-  // Delete Button
+  // Edit Button
+  const editButton = document.createElement("button");
+  editButton.innerText = "Edit";
+  editButton.classList.add("edit-btn");
+  toDoDiv.appendChild(editButton);
+  //Delete Button
   const deleteButton = document.createElement("button");
   deleteButton.innerHTML = '<svg><use href="#delete-icon"></use></svg>';
   deleteButton.classList.add("delete-btn");
@@ -85,7 +92,28 @@ function deleteCheck(e) {
   // Check mark
   if (item.classList[0] === "complete-btn") {
     const toDo = item.parentElement;
+    const completedButton = toDo.children[0];
     toDo.classList.toggle("done");
+    if (completedButton.innerText === "✓") {
+      completedButton.innerText = "";
+    } else {
+      completedButton.innerText = "✓";
+    }
+  }
+
+  // Edit
+  if (item.classList[0] === "edit-btn") {
+    const toDo = item.parentElement;
+    const newToDo = toDo.children[1];
+    const editButton = toDo.children[2];
+    if (editButton.innerText.toLowerCase() == "edit") {
+      newToDo.removeAttribute("readonly");
+      newToDo.focus();
+      editButton.innerText = "Save";
+    } else {
+      newToDo.setAttribute("readonly", "readonly");
+      editButton.innerText = "Edit";
+    }
   }
 }
 
@@ -143,11 +171,18 @@ function getToDos() {
     completedButton.innerHTML = "";
     completedButton.classList.add("complete-btn");
     toDoDiv.appendChild(completedButton);
-    // Create li
-    const newToDo = document.createElement("li");
-    newToDo.innerText = todo;
+    // Create input
+    const newToDo = document.createElement("input");
+    newToDo.value = todo;
     newToDo.classList.add("todo-item");
+    newToDo.type = "text";
+    newToDo.setAttribute("readonly", "readonly");
     toDoDiv.appendChild(newToDo);
+    // Edit Button
+    const editButton = document.createElement("button");
+    editButton.innerText = "Edit";
+    editButton.classList.add("edit-btn");
+    toDoDiv.appendChild(editButton);
     // Delete Button
     const deleteButton = document.createElement("button");
     deleteButton.innerHTML = '<svg><use href="#delete-icon"></use></svg>';
@@ -170,6 +205,7 @@ function removeLocalToDos(todo) {
   toDos.splice(toDos.indexOf(toDoIndex), 1);
   localStorage.setItem("toDos", JSON.stringify(toDos));
 }
+
 const LOCAL_STORAGE_LIST_KEY = "task.myLists";
 const LOCAL_STORAGE_SELECTED_LIST_KEY = "task.selectedList";
 let myLists = JSON.parse(localStorage.getItem(LOCAL_STORAGE_LIST_KEY)) || [];
